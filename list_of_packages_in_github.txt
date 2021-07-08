@@ -1,0 +1,5 @@
+besthr	besthr	0.2.0	github	besthr	teammaclean
+htmltools	htmltools	0.5.0.9000	github	htmltools	rstudio
+htmltools	htmltools	0.5.1.9000	github	htmltools	rstudio
+itssl	itssl	0.0.0.9000	github	itssl	danmaclean
+simplebf	simplebf	0.1.0	github	simplebf	danmaclean
