@@ -218,6 +218,16 @@ library(packagename)
 If you get no any error that means the package has been installed successfully and imported.
 If you get the error message **there is no package called Packagename **, that means the package has not been installed.
 
+## Loading all libraries
+
+I tested if all the packages load fine with the code below:
+```
+pkg <- unlist(toInstall)  # this is a vector of all cran packages 
+sapply(pkg, require, character.only = TRUE)  # this code loads all the packages
+```
+
+The code above with load all the packages. There are 223 packages I installed from CRAN. This is like running library() for each package. At the end it will show a vector of TRUE for each package as in the image below:
+![](Image/libray_loaded.png)
 
 ## How to explore ubuntu (wsl) files from windows.
 
