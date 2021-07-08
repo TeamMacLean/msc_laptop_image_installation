@@ -198,3 +198,19 @@ library(packagename)
 If you get no any error that means the package has been installed successfully and imported.
 If you get the error message **there is no package called Packagename **, that means the package has not been installed.
 
+
+## How to explore ubuntu (wsl) files from windows.
+
+You may need to open Ubuntu files in Windows. To find the ubuntu files in Windows explorer, the best way is to use the command below in Ubuntu terminal.
+```
+cd
+explorer.exe .
+```
+
+This will then open up windows file explorer showing the current directory of ubuntu.
+
+If you want to open ubuntu files from a windows application, then in the windows file explorer address bar, you can type the path to ubuntu home area as **\\\\wsl\$\\Ubuntu-20.04\\home\\shrestha** (as shown in image below in blue background)
+
+![](Image/ubuntu_files_in_windows.png)
+
+I found this information in this [website](https://www.howtogeek.com/426749/how-to-access-your-linux-wsl-files-in-windows-10/)
