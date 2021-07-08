@@ -108,7 +108,14 @@ Once R v4.1 and Rstudio are installed, you should see them listed when you click
 
 Click the search icon and type Rstudio. Rstudio will be listed. At the right side, select **Run as administrator** from the list. Rstudio will open up and you will see R console at the left side of Rstudio.
 
-We will now install R packages from this R console. I have listed out names of packages in the following files:
+We will now install R packages from this R console. Dan has provided me some renv.lock files with package names in them. I extracted the package names with a python script 
+
+```
+python read_json_lockfiles.py cran Renvs/*.lock | sort | uniq > list_of_packages_in_cran.txt
+python read_json_lockfiles.py github Renvs/*.lock | sort | uniq > list_of_packages_in_github.txt
+```
+
+I have the names of packages in the following files in windows:
 
 ```
 C:/Users/shrestha/Downloads/list_of_packages_in_cran.txt
@@ -189,7 +196,20 @@ install.packages("htmltools")
 
 Final package Dan asked to install - nycflights13. I checked if it was installed as a dependency of other tools and it was already installed.
 
-All packages have been installed. To test if packages installation is successful, you can import the package with library function
+All packages have been installed. Let's check if I missed to install any package.
+
+```
+# read the list of all packages
+toInstall <- read.csv("C:/Users/shrestha/Downloads/list_of_packages_in_cran.txt", header = FALSE)
+setdiff(unlist(toInstall), installed.packages())
+```
+
+The code above reads the list of all packages that need to be installed from the file and check if there is any package not in the list of installed packages. It does not show any package name that is not installed. I have screenshot of the test below:
+
+![](Image/test_r_pkg_installed.png)
+
+
+To test if packages installation is successful, you can import the package with library function (also in the plot above)
 
 ```
 library(packagename)
