@@ -244,3 +244,29 @@ If you want to open ubuntu files from a windows application, then in the windows
 ![](Image/ubuntu_files_in_windows.png)
 
 I found this information in this [website](https://www.howtogeek.com/426749/how-to-access-your-linux-wsl-files-in-windows-10/)
+
+## Add username msc in ubuntu
+
+At the time of installing and opening ubuntu the first, I created the default username in **shrestha** with password **tsl12345**. However, all msc students running this windows image will be logged in as **shrestha**. I wanted to change the username **shrestha** to **msc** but that was not possible. So I added another user **msc** with  password **letmein**. There are two users now. I, then, gave root permissions **msc**.
+
+```
+sudo usermod -aG sudo msc
+```
+
+Test root permission for msc
+```
+su - msc
+[type password]
+```
+
+So, it worked. msc has root permissions.
+
+However, miniconda and all bioinformatics tools are installed in **shrestha** home folder. I want to swap the usernames **msc** and **shrestha** and make **msc** as the default user. But this is not a good solution. So I installed miniconda3 and all bioinformatics tools for **msc** user, as I did for **shrestha** user. Then, I changed the default user to **msc**. To change the default user, click search icon at lower left corner in windows, type **cmd** to search command prompt. It will be listed on the right hand side and select **run as administrator** from the options. When the windows terminal is opened, type the command:
+
+```
+ubuntu2004 config --default-user msc   # as ubuntu 20.04 is installed.
+```
+
+So, now when you open ubuntu, you are logged as **msc**.
+
+
